@@ -1,0 +1,30 @@
+.display{
+    display: block;
+}
+.edit{
+    display: block;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    label{
+        font-weight: 400;
+    }
+}
+.edit{
+    div{
+        label{
+            color: blue;
+        }
+    }
+}
+input,select{
+    font-weight: 700;
+}
+form{
+    span{
+        font-weight: 700;
+    }
+}
+.justify-end{
+    justify-content: flex-end;
+}

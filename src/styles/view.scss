@@ -1,0 +1,90 @@
+.status{
+    display: flex;
+    text-align: center;
+    align-items: center;
+  
+}
+.goback{
+    text-align: center;
+    padding: 10px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    svg{
+        color:blueviolet ;
+        margin-right: 20px;
+    }
+}
+.about{
+    display: block;
+}
+.aboutSpan{
+    span{
+        display: block;
+        text-align: right;
+    }
+}
+.justify{
+    justify-content: space-between;
+    li{
+        text-align-last: left;
+    }
+}
+ul{
+    margin-top: 20px;
+}
+ul.status.justify{
+    align-items: flex-start;
+}
+.block{
+    display: block;
+    margin-right: 30px;
+    margin:0px 30px 30px 0;
+}
+.amont-status{
+    margin-top: 10px;
+    background-color: #f8f5f5;
+    border-radius: 8px;
+    text-align-last: left;
+}
+.amont-status__list{
+    width: 100%;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    text-align-last: left;
+}
+.last__about{
+    background-color: #141625;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    align-items: center;
+}
+.last-price{
+    font-size: 25px;
+    color: #fff;
+    font-weight: 700;
+}
+.invoiceabout__list{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+@media only screen and (max-width:570px) {
+    .wiew__buttongroup{
+        padding-top: 15px;
+        display: flex;
+        justify-content: center;
+        button{
+            margin: 0;
+            font-style: 13px;
+        }
+    }
+    .wiew__status{
+display: flex;
+margin: 10px auto;
+    }
+    
+}
