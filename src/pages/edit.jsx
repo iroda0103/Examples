@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button, Cascader, Checkbox, Col, DatePicker, Form, Input, InputNumber, Row, Select, Space } from 'antd';
 import FormItem from 'antd/es/form/FormItem';
 import { useLocation, useParams } from 'react-router';
@@ -6,8 +6,12 @@ import { FcPrevious } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 import useInputValue from '../hooks/useInputValue';
 import axios from 'axios';
+import ThemeContext from '../context/ThemeContext';
 function Edit() {
   const navigate = useNavigate();
+
+  const theme = useContext(ThemeContext);
+  // className={`theme theme-${theme}`}
   // const [clientName, ChangeClientName] = useInputValue('');
   // const [email, changeEmail] = useInputValue('');
   // // const [dueDate, changeDueDate] = useInputValue('');
@@ -107,11 +111,11 @@ function Edit() {
 
 
       <h2>{a} <span className='paragraph'>#</span>XM9141</h2>
-      <Form layout="vertical" onFinish={finish}>
-        <Form.Item name={'adress'} label="Street Address">
+      <Form layout="vertical" onFinish={finish} >
+        <Form.Item name={'adress'} label="Street Address" className={`item-${theme}`}>
           <Input />
         </Form.Item>
-        <FormItem className='display'>
+        <FormItem className={`display item-${theme} `}>
           <Row gutter={16}>
             <Col className="gutter-row" span={8}>
               <Form.Item name={'city'} label="City">
@@ -131,18 +135,18 @@ function Edit() {
           </Row>
 
         </FormItem>
-        <Form.Item name={'name'} label="Client's Name" rules={[{
+        <Form.Item name={'name'} className={`item-${theme}`} label="Client's Name" rules={[{
           required: true
         }]} >
           <Input defaultValue={(param.id) ?data.to:""} />
         </Form.Item>
-        <Form.Item name={'email'} label="Client's Email" rules={[{ type: 'email', required: true },]}>
+        <Form.Item name={'email'} className={`item-${theme}`} label="Client's Email" rules={[{ type: 'email', required: true },]}>
           <Input defaultValue={(param.id) ?data.email:""} />
         </Form.Item>
-        <Form.Item name={'address'} label="Street Address" >
+        <Form.Item name={'address'} className={`item-${theme}`} label="Street Address" >
           <Input />
         </Form.Item>
-        <Row gutter={16}>
+        <Row gutter={16} className={`item-${theme}`}>
           <Col className="gutter-row" span={8}>
             <Form.Item name={'city'} label="City" >
               <Input />
@@ -159,7 +163,7 @@ function Edit() {
           </Col>
 
         </Row>
-        <Row gutter={12}>
+        <Row gutter={12} className={`item-${theme}`}>
           <Col>
             <FormItem label="Due Date" name={'dueDate'}>
               <DatePicker showTime />
@@ -202,10 +206,10 @@ function Edit() {
 
           </Col>
         </Row>
-        <Form.Item name={'description'} label="Project Description">
+        <Form.Item name={'description'} label="Project Description" className={`item-${theme}`}>
           <Input />
         </Form.Item>
-        <Form.Item
+        <Form.Item className={`item-${theme}`}
           name={'price'}
           label="Price"
           rules={[
@@ -219,7 +223,7 @@ function Edit() {
         >
           <InputNumber defaultValue={(param.id) ?data.price:0} />
         </Form.Item>
-        <FormItem>
+        <FormItem className={`item-${theme}`}>
           <Row gutter={12} className='justify-end'>
             <Col>  <Button type="primary" htmlType="submit">
               Cancel

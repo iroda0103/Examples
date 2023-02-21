@@ -28,3 +28,18 @@ form{
 .justify-end{
     justify-content: flex-end;
 }
+.item-light{
+    label{
+
+        color:black;
+    }
+}
+.item-dark{
+    .ant-form-item-label{
+
+        label{
+    
+            color: #fff;
+        }
+    }
+}
