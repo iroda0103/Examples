@@ -8,9 +8,10 @@ function App() {
   function changeTheme() {
     setTheme(theme == 'light' ? 'dark' : 'light')
   }
+  let token=localStorage.getItem("accessToken");
   return (
     <div className="App">
-      <Navbar functions={[theme, changeTheme]}></Navbar>
+      <Navbar functions={[theme, changeTheme]} token={token}></Navbar>
       <ThemeContext.Provider value={theme}>
         <MainPage />
       </ThemeContext.Provider>

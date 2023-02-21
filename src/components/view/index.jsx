@@ -26,7 +26,7 @@ function View({ user }) {
                     Authorization: `Bearer ${token}`
                 }
             }).then((res) => {
-                navigate(-1)
+                navigate('/')
             })
         }
     }

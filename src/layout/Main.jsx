@@ -14,10 +14,10 @@ const Main = ({datainvoices}) => {
     console.log( invoices.invoices,'invoices')
     let arry= (invoices.invoices)? invoices.invoices:[];
     const [data, setData] = useState(invoices.invoices);
-    useEffect(()=>{
-        // console.log(data,"data",arry);
-setData(arry)
-    },[arry])
+//     useEffect(()=>{
+//         // console.log(data,"data",arry);
+// setData(arry)
+//     },[arry])
     const dispatch = useDispatch()
   useEffect(() => {
     dispatch( getInvoices())
@@ -27,7 +27,7 @@ setData(arry)
     // console.log(location);
     const params = new URLSearchParams(location.search);
     const paid = params.get('paid');
-    // console.log(paid, "paid");
+    console.log(paid, "paid",location.search);
 
     const [filter, setFilter] = useState(true);
     function ChangeFilter(e) {
@@ -44,32 +44,32 @@ setData(arry)
         navigate({
             search: filter_name
         })
-        axios.get("http://167.235.158.238:3001/invoices", {
-                    params: {
-                        paid
-                    }
-                }).then((res) => {
-                    console.log(res.data,"oooooo");
-                    setData(res.data)
-                    // // arry=res.data
-                    // setData(res.data)
-                    // console.log(arry,"rererererere");
-                    // dispatch(console.log(invoices))
+        // axios.get("http://167.235.158.238:3001/invoices", {
+        //             params: {
+        //                 paid
+        //             }
+        //         }).then((res) => {
+        //             console.log(res.data,"oooooo");
+        //             setData(res.data)
+        //             // // arry=res.data
+        //             // setData(res.data)
+        //             // console.log(arry,"rererererere");
+        //             // dispatch(console.log(invoices))
         
-                })
+        //         })
     }
-    // useEffect(() => {
-    //     axios.get("http://167.235.158.238:3001/invoices", {
-    //         params: {
-    //             paid
-    //         }
-    //     }).then((res) => {
-    //         // console.log(res.data);
-    //         setData(res.data)
+    useEffect(() => {
+        axios.get("http://167.235.158.238:3001/invoices", {
+            params: {
+                paid
+            }
+        }).then((res) => {
+            console.log(res.data,paid,'sss',location.search);
+            setData(res.data)
 
-    //     })
-    //     // console.log(data)
-    // }, [paid])
+        })
+        // console.log(data)
+    }, [paid])
     function newinvoices() {
         if (!token) {
             navigate("/login");
