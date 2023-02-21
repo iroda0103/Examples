@@ -225,7 +225,7 @@ function Edit() {
         </Form.Item>
         <FormItem className={`item-${theme}`}>
           <Row gutter={12} className='justify-end'>
-            <Col>  <Button type="primary" htmlType="submit">
+            <Col>  <Button type="primary" htmlType="submit" onClick={goback}>
               Cancel
             </Button></Col>
             <Col >

@@ -83,7 +83,7 @@ const Main = ({datainvoices}) => {
     return <div className="invoice">
         <h1 className="korinmas"></h1>
         <div className="invoiceTitle">
-            <div className="title"> <h2>Invoices</h2> <p className="paragraph">There are 7 total invoices</p></div>
+            <div className="title"> <h2>Invoices</h2> <p className="paragraph">There are <span>{data.length}</span> total invoices</p></div>
             <div className="invoiceTitle__panelFilter">
                 <select className="selectPaid statusSpan"  onChange={ChangeFilter}>
                     <option name='aaa'> Filter <span className="mobile--none"></span> </option>
